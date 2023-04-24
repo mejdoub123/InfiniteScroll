@@ -1,9 +1,9 @@
 const imageContainer = document.getElementById("image-container");
 const loader = document.getElementById("loader");
 //Unsplash API
-const count = 10;
+const count = 5;
 const apiKey = "YLdVtI9wh3EnQPqB9jXzKMU2uB03YiJEFCe6jTznIOM";
-const apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}
+let apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}
 &count=${count}`;
 
 let ready = false;
@@ -16,6 +16,9 @@ const imageLoaded = () => {
   if (imagesLoaded === totalImages) {
     ready = true;
     loader.hidden = true;
+    count = 20;
+    apiUrl = `https://api.unsplash.com/photos/random/?client_id=${apiKey}
+&count=${count}`;
   }
 };
 
